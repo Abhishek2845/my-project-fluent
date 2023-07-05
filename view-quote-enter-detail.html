@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>View Quote</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link async="true" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"  crossorigin=""/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
+    <script src="assets/css/jquery.min.js"></script>
+    <script src="assets/css/owl.carousel.min.js"></script>
+    <script src="assets/css/carausol_slider.js"></script>
+    <style>
+    
+    /*----- carousel start ------*/
+    .owl-nav .owl-prev {
+    position: absolute;
+    top: 22%;
+    left: 5.6%;
+    height: 38px;
+    text-align: center;
+    width: 38px;
+    border-radius: 40px;
+    font-size:100px !important;
+    color: #000 !important;
+    padding-top: 5px;
+    transition: 0.25s;
+    border: none !important;
+    background: transparent;
+    /*box-shadow: 0 7px 29px 0 hsla(240,5%,41%,.2);*/
+    /*box-shadow: 1px 1px 1px transparent !important;*/
+    }
+    .owl-nav .owl-next {
+    position: absolute;
+    top: 22%;
+    right: 5.6%;
+    height: 38px;
+    text-align: center;
+    width: 38px;
+    border-radius: 40px;
+    font-size:100px !important;
+    color: #000 !important;
+    padding-top: 5px;
+    transition: 0.25s;
+    border: none !important;
+    background: transparent;
+    /*box-shadow: 0 7px 29px 0 hsla(240,5%,41%,.2);*/
+    /*box-shadow: 1px 1px 1px transparent !important;*/
+    }
+    .owl-nav .owl-prev {
+    font-size: 20px;
+    }
+    .owl-nav>div {
+    margin-top: -10px;
+    position: absolute;
+    top: 150px;
+    color: #000;
+    }
+    .carousel-box button:focus {
+    outline: none;
+    }
+    @media screen and (max-width:768px) {
+    .owl-nav .owl-prev {
+    font-size: 60px !important;
+    }
+    .owl-nav .owl-next {
+    font-size: 60px !important;
+    }
+    }
+    .special-overlay-item {
+    overflow: hidden;
+    position: relative;
+    }
+    /*.special-img img {
+    width: 100%;
+    height: 230px;
+    }*/
+    .special-overlay:before {
+    background-image: linear-gradient(to top, #000000ba 0%, #00000017 4%);
+    /*background-color: rgb(0 0 0 / 40%);*/
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    border-radius: 10px;
+    }
+    .special-overlay-item .special-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 0px 0px 10px 0px;
+    }
+    .special-overlay-item .special-content a {
+    color: #fefefe;
+    text-decoration: none;
+    }
+    .special-overlay-item .special-content h3 {
+    /*background-color: #fd5b0099;*/
+    padding: 4px 20px 8px;
+    margin-bottom: 0;
+    /*text-align: center;*/
+    font-size: 22px;
+    }
+    /*.special-overlay-item:hover h3 {
+    background-color: #041d4ade;
+    padding: 4px 0px 8px;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 22px;
+    }*/
+    .dashboard .filter{
+    position: absolute;
+    right: 0px;
+    top: 70px;
+    z-index: 992;
+    }
+    .dashboard .filter i{
+    font-size: 26px;
+    color: black;
+    }
+    .dashboard .filter .icon{
+    padding-right: 15px !important;
+    }
+.qty{
+  text-align: right
+}
+    .qty .count {
+    color: #000;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    padding: 0 2px;
+    min-width: 35px;
+    text-align: center;
+}
+.qty .plus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 15px;
+    height: 15px;
+    font: 15px/1 Arial,sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    }
+.qty .minus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 15px;
+    height: 15px;
+    font: 15px/1 Arial,sans-serif;
+    text-align: center;
+    line-height: 0.8;
+    border-radius: 50%;
+    background-clip: padding-box;
+}
+@media screen and (max-width: 768px){
+  .qty {
+    width: 90px;
+}
+}
+/*div {
+    text-align: center;
+}*/
+.minus:hover{
+    background-color: #717fe0 !important;
+}
+.plus:hover{
+    background-color: #717fe0 !important;
+}
+/*Prevent text selection*/
+span{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+input{  
+    border: 0;
+    width: 2%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input:disabled{
+    background-color:white;
+}
+         
+    </style>
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/Fluent-Logo.png" alt="">
+          </a>
+          <div class="search-bar d-block d-lg-none">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+              <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+              <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+          <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+              <li class="nav-item dropdown header-shipping">
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                  <i class="bi bi-cart"></i>
+                  <span class="badge bg-warning badge-number">2</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="login.html" class="main-logo">
+                  <img src="login.png" alt="">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- ======= Header ======= -->
+      <
+      <main id="main" class="main">
+        <div class="container">
+          <div class="pagetitle">
+            <div class="d-flex align-items-center justify-content-between">
+              <!-- <h1 class="page-title">Alter Metals</h1> -->
+            </div>
+            <p class="page-subtitle"><i class="fas fa-angle-left me-2"></i>Return to Asset 01000012345</p>
+          </div>
+          <style>
+        .quote-preview{
+          padding: 20px 20px;
+        }
+        .quote-preview .quote-title{
+          color: #000000cc;
+          font-weight: 800;
+        }
+        .quote-preview .quote-subtitle{
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .quote-product .bl-title{
+          font-weight: 600;
+          font-size: 13px;
+        }
+        .quote-product .qbl-title{
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        .quote-product .quote-add{
+          font-size: 15px;
+        }
+        .quote-product .quote-request{
+          font-size: 15px;
+        }
+        @media screen and (max-width: 768px) {
+          .quote-preview{
+          padding: 20px 0px;
+        }
+        }
+      </style>
+          <section class="section dashboard">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="row">
+                  <div class="col-xxl-12 col-xl-12">
+                    <div class="card info-card preview-card">
+                      <div class="preview-body">
+                      <div class="quote-preview">
+                        <h2 class="quote-title">Quotation FCLSQ00055</h2>
+                        <p class="quote-subtitle">Parts for Assets 01002100025</p>
+                        <div class="d-flex justify-content-between quote-product">
+                          <div class="bill-to">
+                            <p class="bl-title">BILL TO:</p>
+                            <p class="qbl-title">Alter Metals</p>
+                            <p class="quote-add">123 Main Street Sandusky, OH 12345</p>
+                            <p class="quote-request">Requested by: John Bisop</p>
+                          </div>
+                          <div class="ship-to">
+                            <p class="bl-title">SHIP TO:</p>
+                            <p class="qbl-title">Alter Metals Warehouse</p>
+                            <p class="quote-add">321 Front Street Ney York, NY 12345</p>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="pr-area preview-list border-bottom border-top">
+                          <div class="preview-item">
+                            <p class="mt-3"><i class="fas fa-times me-2" style="color: red;"></i></p>
+                            <div class="preview-thumbnail">
+                              <img src="assets/img/product-2.jpg" alt="image" class="">
+                            </div>
+                            <div class="preview-item-content d-flex justify-content-between w-100">
+                              <div>
+                              <h3 class="preview-subject">Radical Stacker Slewing Bearing </h3>
+                              <p class="text-muted">SKU: PROFC100024</p>
+                              </div>
+                             
+                              <div class="qty">
+                                <span class="minus bg-dark">-</span>
+                                <input type="number" class="count" name="qty" value="0">
+                                <span class="plus bg-dark">+</span>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="pr-area preview-list border-bottom">
+                          <div class="preview-item">
+                            <p class="mt-3"><i class="fas fa-times me-2" style="color: red;"></i></p>
+                            <div class="preview-thumbnail">
+                              <img src="assets/img/product-2.jpg" alt="image" class="">
+                            </div>
+                            <div class="preview-item-content d-flex justify-content-between w-100">
+                              <div>
+                              <h3 class="preview-subject">Radical Stacker Slewing Bearing </h3>
+                              <p class="text-muted">SKU: PROFC100024</p>
+                              </div>
+                             
+                              <div class="qty">
+                                <span class="minus bg-dark">-</span>
+                                <input type="number" class="count" name="qty" value="0">
+                                <span class="plus bg-dark">+</span>
+                              </div>
+                             
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="pr-area preview-list border-bottom">
+                          <div class="preview-item">
+                            <p class="mt-3"><i class="fas fa-times me-2" style="color: red;"></i></p>
+                            <div class="preview-thumbnail">
+                              <img src="assets/img/product-2.jpg" alt="image" class="">
+                            </div>
+                            <div class="preview-item-content d-flex justify-content-between w-100">
+                              <div>
+                              <h3 class="preview-subject">Radical Stacker Slewing Bearing </h3>
+                              <p class="text-muted">SKU: PROFC100024</p>
+                              </div>
+                             
+                              <div class="qty">
+                                <span class="minus bg-dark">-</span>
+                                <input type="number" class="count" name="qty" value="0">
+                                <span class="plus bg-dark">+</span>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="pr-area preview-list  border-bottom">
+                          <div class="preview-item">
+                            <p class="mt-3"><i class="fas fa-times me-2" style="color: red;"></i></p>
+                            <div class="preview-thumbnail">
+                              <img src="assets/img/product-2.jpg" alt="image" class="">
+                            </div>
+                            <div class="preview-item-content d-flex justify-content-between w-100">
+                              <div>
+                              <h3 class="preview-subject">Radical Stacker Slewing Bearing </h3>
+                              <p class="text-muted">SKU: PROFC100024</p>
+                              </div>
+                              <div class="qty">
+                                <span class="minus bg-dark">-</span>
+                                <input type="number" class="count" name="qty" value="0">
+                                <span class="plus bg-dark">+</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pr-area preview-list text-end mt-3">
+                          <p> <a href="" class="" style="font-weight: 600;">Update cart</a> </p>
+                        </div>
+                        <div class="request-revise-btn text-center">
+                           <a href="" class="request-btn">REQUEST A REVISION</a>
+                        </div>
+                        <div class="text-center">
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                              Launch demo modal
+                            </button>
+                        </div>
+                      </div>
+                    </div>
+                    </div><!-- End Customers Card -->
+                  </div>
+                  </div><!-- End Left side columns -->
+                </div>
+              </section>
+            </div>
+            </main><!-- End #main -->
+            <style>
+              .request-revise-btn{
+                margin: 4rem 0 1rem 0;
+              }
+            .request-btn{
+              position: relative;
+              background: transparent;
+              font-size: 15px;
+              padding: 5px 1.9rem 2px;
+              cursor: pointer;
+              color: #1f5ea8;
+              font-weight: 800;
+              text-transform: capitalize;
+              border-radius: 2px;
+              transition: 0.5s;
+              border-radius: 50px;
+              border: 2px solid #1f5ea8;
+            }
+            .request-btn:hover{
+              background: #1f5ea8;
+              color: white;
+            }
+            .preview-header{
+            padding: 0px 15px 8px;
+            }
+            .preview-ddr .preview-tt{
+            font-size: 22px;
+            color: #393939;
+            font-weight: 600;
+            margin-bottom: 25px;
+            }
+            .preview-ddr .preview-stt{
+            font-size: 18px;
+            color: #393939;
+            font-weight: 600;
+            }
+            .preview-ddr .preview-sttp{
+            color: #1f5ea8;
+            font-weight: 600;
+            font-size: 18px;
+            }
+            .preview-ddr .preview-sttp i{
+            font-size: 13px;
+            }
+            .preview-dropdown a{
+            color: #393939;
+            font-weight: 600;
+            font-size: 18px;
+            }
+            .preview-card{
+            padding-bottom: 0 !important;
+            margin-bottom: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            }
+            .preview-body{padding: 14px !important;}
+            .preview-list .preview-item {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            -webkit-align-items: flex-start;
+            align-items: flex-start;
+            padding: 1rem 0rem;
+            font-size: .875rem;
+            align-items: center;
+            }
+            .preview-list .preview-item .preview-thumbnail {
+            color: #ffffff;
+            position: relative;
+            }
+            .preview-list .preview-item .preview-thumbnail img {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+            }
+
+            .preview-list .preview-item .preview-item-content {
+            line-height: 1;
+            padding-left: 15px;
+            }
+            .preview-list .preview-item .preview-item-content .preview-subject{
+            font-weight: 600;
+            font-size: 20px;
+            padding-right: 14px;
+            }
+            .flex-grow {
+            flex-grow: 1;
+            }
+            .preview-list .preview-item .preview-item-content p {
+            margin-bottom: 5px;
+            line-height: 22px;
+            }
+            @media screen and (max-width: 768px){
+              .preview-list .preview-item .preview-thumbnail img {
+            width: 50px;
+            height: 50px;
+          }
+          .preview-list .preview-item .preview-item-content p {
+            font-size: 13px;
+            }
+          .preview-list .preview-item .preview-item-content .preview-subject{
+                font-size: 13px;
+          }
+            }
+            </style>
+
+            <style>
+              .footer-quote{
+                background: #1f5ea8;
+                padding: 20px 20px;
+              }
+              .request-quote-btn{
+                text-align: center;
+              }
+              .request-quote{
+                background: #ffc107;
+                font-size: 15px;
+                border: 2px solid #ffc107;
+                padding: 10px 3.9rem 6px;
+                cursor: pointer;
+                color: #292929;
+                font-weight: 700;
+                text-transform: capitalize;
+                border-radius: 2px;
+                transition: 0.5s;
+                border-radius: 50px;
+              }
+              .request-quote:hover{
+                border: 2px solid #ffc107;
+                background: transparent;
+                color: #ffc107;
+              }
+            </style>
+
+            <div class="footer-quote">
+              <div class="container">
+                <div class="request-quote-btn">
+                   <a href="" class="request-quote">REQUEST A QUOTE</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- modal start -->
+            <!-- Button trigger modal -->
+
+<style>
+  .btn-modal {
+    background: #1f5ea8;
+    border: 1px solid #1f5ea8;
+    border-radius: 30px;
+    padding: 6px 35px 0px;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+  }
+   .btn-modal.btn-cancel{
+    background: #fff;
+    color: black;
+    border: 1px solid #fff;
+  }
+@media (min-width: 576px)
+{.modal-dialog {
+    margin-top: 6rem;
+}
+}
+
+.modal-dialog {
+    margin-top: 6rem;
+}
+.modal-footer{
+justify-content:center;
+}
+.bl-16{
+  font-size: 17px !important;
+}
+</style>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header border-0 pb-0">
+        <h3 class="modal-title" id="exampleModalLabel"><b> Quote Details </b></h3>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body">
+        <div class="quote-details quote-product">
+          <div class="bill-to">
+            <p class="bl-title bl-16">BILL TO:</p>
+            <p class="qbl-title bl-16">Alter Metals</p>
+            <p class="quote-add bl-16">123 Main Street Sandusky, OH 12345</p>
+            <p class="quote-request bl-16">Requested by: John Bisop</p>
+          </div>
+          <div class="ship-to">
+            <p class="bl-title bl-16">SHIP TO:</p>
+            <p class="qbl-title bl-16">Alter Metals Warehouse</p>
+            <div class="d-flex justify-content-between">
+              <p class="quote-add bl-16">321 Front Street Ney York, NY 12345</p>
+               <p class="text-end"> <i class="fas fa-edit"></i></p>
+            </div>
+          </div>
+          <p class="qbl-title bl-16">YOUR DETAILS:</p>
+        </div>
+        <div class="contact-form">
+          <form action="">
+            <div class="row">
+              <div class="form-field col-lg-12 col-md-12">
+                <input id="name" class="input-text" type="text" placeholder="Conatct Name">
+              </div>
+              <div class="form-field col-lg-12 col-md-12">
+                <input id="name" class="input-text" type="number" placeholder="Cell Phone">
+              </div>
+              <div class="form-field col-lg-12 col-md-12">
+                <input id="name" class="input-text" type="email" placeholder="Email">
+              </div>
+              <div class="form-field col-lg-12 text-center mt-3">
+                <button type="button" class="btn-modal">CONFIRM &amp VIEW QUOTE</button>
+              </div>
+            </div>
+          </form>
+          </div>
+          </div>
+                  <!-- <div class="modal-footer border-0 text-center">
+                    <button type="button" class="btn-modal">CONFIRM &amp VIEW QUOTE</button>
+                  </div> -->
+    </div>
+  </div>
+</div>
+            <!-- modal end -->
+            <!-- Vendor JS Files -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+            <!-- Template Main JS File -->
+            <script src="assets/js/main.js"></script>
+            <script src="assets/js/search.bar.js"></script>
+            <script src="assets/css/owl.carousel_new.js"></script>
+            <!-- carousel script start -->
+            <script>
+            $('.owl-carousel2').owlCarousel({
+            loop: true,
+            margin: 10,
+            dots: false,
+            nav: true,
+            autoplay: false,
+            smartSpeed: 3000,
+            autoplayTimeout: 3000,
+            responsive: {
+            0: {
+            items: 1
+            },
+            600: {
+            items: 1
+            },
+            1000: {
+            items: 1
+            }
+            }
+            })
+            </script>
+
+            <script>    
+              $(document).ready(function(){
+                $('.count').prop('disabled', true);
+                $(document).on('click','.plus',function(){
+                $('.count').val(parseInt($('.count').val()) + 1 );
+                    if ($('.count').val() >= 100) {
+                    $('.count').val(100); 
+                    }
+                });
+                  $(document).on('click','.minus',function(){
+                  $('.count').val(parseInt($('.count').val()) - 1 );
+                    if ($('.count').val() <= 0) {
+                    $('.count').val(0);
+                  }
+                    });
+              });
+            </script>
+          </body>
+        </html>

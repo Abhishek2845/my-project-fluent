@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link async="true" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"  crossorigin=""/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
+    <script src="assets/css/jquery.min.js"></script>
+    <script src="assets/css/owl.carousel.min.js"></script>
+    <script src="assets/css/carausol_slider.js"></script>
+    <style>
+    
+    /*----- carousel start ------*/
+    .owl-nav .owl-prev {
+    position: absolute;
+    top: 22%;
+    left: 5.6%;
+    height: 38px;
+    text-align: center;
+    width: 38px;
+    border-radius: 40px;
+    font-size:100px !important;
+    color: #000 !important;
+    padding-top: 5px;
+    transition: 0.25s;
+    border: none !important;
+    background: transparent;
+    /*box-shadow: 0 7px 29px 0 hsla(240,5%,41%,.2);*/
+    /*box-shadow: 1px 1px 1px transparent !important;*/
+    }
+    .owl-nav .owl-next {
+    position: absolute;
+    top: 22%;
+    right: 5.6%;
+    height: 38px;
+    text-align: center;
+    width: 38px;
+    border-radius: 40px;
+    font-size:100px !important;
+    color: #000 !important;
+    padding-top: 5px;
+    transition: 0.25s;
+    border: none !important;
+    background: transparent;
+    /*box-shadow: 0 7px 29px 0 hsla(240,5%,41%,.2);*/
+    /*box-shadow: 1px 1px 1px transparent !important;*/
+    }
+    .owl-nav .owl-prev {
+    font-size: 20px;
+    }
+    .owl-nav>div {
+    margin-top: -10px;
+    position: absolute;
+    top: 150px;
+    color: #000;
+    }
+    .carousel-box button:focus {
+    outline: none;
+    }
+    @media screen and (max-width:768px) {
+    .owl-nav .owl-prev {
+    font-size: 60px !important;
+    }
+    .owl-nav .owl-next {
+    font-size: 60px !important;
+    }
+    }
+    .special-overlay-item {
+    overflow: hidden;
+    position: relative;
+    }
+    /*.special-img img {
+    width: 100%;
+    height: 230px;
+    }*/
+    .special-overlay:before {
+    background-image: linear-gradient(to top, #000000ba 0%, #00000017 4%);
+    /*background-color: rgb(0 0 0 / 40%);*/
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    border-radius: 10px;
+    }
+    .special-overlay-item .special-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 0px 0px 10px 0px;
+    }
+    .special-overlay-item .special-content a {
+    color: #fefefe;
+    text-decoration: none;
+    }
+    .special-overlay-item .special-content h3 {
+    /*background-color: #fd5b0099;*/
+    padding: 4px 20px 8px;
+    margin-bottom: 0;
+    /*text-align: center;*/
+    font-size: 22px;
+    }
+    /*.special-overlay-item:hover h3 {
+    background-color: #041d4ade;
+    padding: 4px 0px 8px;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 22px;
+    }*/
+    .dashboard .filter{
+    position: absolute;
+    right: 0px;
+    top: 70px;
+    z-index: 992;
+    }
+    .dashboard .filter i{
+    font-size: 26px;
+    color: black;
+    }
+    .dashboard .filter .icon{
+    padding-right: 15px !important;
+    }
+    /*----------*/
+    .text {
+    display: table;
+    margin: 20px auto;
+    }
+    .t-dropdown-block {
+    width: auto;
+    height: auto;
+    margin: 20px auto;
+    position:relative
+    }
+    .t-dropdown-list {
+    display: none;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    z-index: 10;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 166px;
+    overflow: auto;
+    position: absolute;
+    padding-top: 10px;
+    }
+    .t-dropdown-item {
+    padding: 5px 20px;
+    margin: 2px 0;
+    cursor: pointer;
+    }
+    .t-dropdown-item:hover {
+    background-color: #F1F1F1;
+    }
+    .t-dropdown-select {
+    border: 1px solid #DDD;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    background-color: #FFF;
+    box-sizing: content-box;
+    }
+    .t-dropdown-input {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px 4px;
+    box-sizing: border-box;
+    }
+    .t-select-btn {
+    background-image: url(https://cdn4.iconfinder.com/data/icons/ui-indicatives/100/Indicatives-26-128.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 7px 7px;
+    position: absolute;
+    width: 30px;
+    top: 0;
+    right: 0;
+    height: 100%;
+    border-left: 1px solid #DDD;
+    }
+    .t-select-btn:active {
+    background-color: #F1F1F1;
+    }
+    .t-dropdown-list input{
+      margin-bottom: 15px;
+      margin-left: 10px;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+      <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/Fluent-Logo.png" alt="">
+          </a>
+          <div class="search-bar d-block d-lg-none">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+              <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+              <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+          <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+              <li class="nav-item dropdown header-shipping">
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                  <i class="bi bi-cart"></i>
+                  <span class="badge bg-warning badge-number">2</span>
+                </a>
+              </li>
+              <li class="nav-item drop-border">
+                <a href="login.html" class="main-logo">
+                  <img src="login.png" alt="">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- ======= Header ======= -->
+      <style>
+      
+      .t-dropdown-select i{
+      position: absolute;
+      background: #1f5ea8;
+      padding: 10px;
+      right: 0;
+      color: white;
+      }
+      </style>
+      <main id="main" class="main">
+        <div class="container">
+          <div class="pagetitle">
+            <div class="t-dropdown-block">
+              
+              <div class="t-dropdown-select"> <i class="bi bi-search"></i>
+                <input type="text" class="t-dropdown-input" placeholder="What are you looking for?" />
+              </div>
+              
+              <ul class="t-dropdown-list">
+                <form action="/action_page.php">
+                  <input type="radio" id="html" name="fav_language" value="">
+                  <label for="html">Search All</label><br>
+                  <input type="radio" id="css" name="fav_language" value="">
+                  <label for="css">Tutorials</label><br>
+                  <input type="radio" id="javascript" name="fav_language" value="">
+                  <label for="javascript">Manuals</label><br>
+                  <input type="radio" id="videos" name="fav_language" value="">
+                  <label for="videos">Videos</label><br>
+                  <input type="radio" id="schematics" name="fav_language" value="">
+                  <label for="schematics">Schematics</label>
+                </form>
+                <li class="t-dropdown-item">Item 1</li>
+                <li class="t-dropdown-item">Item 2</li>
+                <li class="t-dropdown-item">Item 3</li>
+                <li class="t-dropdown-item">Item 4</li>
+                <li class="t-dropdown-item">Item 5</li>
+                <li class="t-dropdown-item">Item 6</li>
+                <li class="t-dropdown-item">Item 7</li>
+                <li class="t-dropdown-item">Item 8</li>
+                <li class="t-dropdown-item">Item 9</li>
+                <li class="t-dropdown-item">Item 10</li>
+                <li class="t-dropdown-item">Item 11</li>
+                <li class="t-dropdown-item">Item 12</li>
+              </ul>
+            </div>
+          </div>
+<style>
+  .sb-content a{
+      font-size: 19px;
+      font-weight: 600;
+      color: #212529;
+      }
+      @media (max-width: 767px) {
+      .sb-content a {
+      font-size: 15px;
+      }
+      }
+      .border-title {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      color: #222;
+      font-weight: 700;
+      }
+      .border-title:before {
+      content: "";
+      width: 0%;
+      height: 0px;
+      background: #000;
+      }
+      .border-title:after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background: #000;
+      bottom: 1px;
+      position: relative;
+      }
+      .border-title:before{
+      margin: 0 0px 0 0;
+      }
+      .border-title:after{
+      margin: 0 0 0 15px;
+      }
+      .border-icon span{
+      font-size: 20px
+      }
+      .border-icon{
+      position: relative;
+      font-size: 15px;
+      list-style: none;
+      padding-left: 32px;
+      color: #818181;
+      margin: 6px 0px;
+      }
+      .border-icon img{
+      width: 18px;
+      height: 18px;
+      vertical-align: top;
+      margin-right: 10px;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      line-height: 20px;
+      font-size: 14px;
+      }
+      .border-icon p{
+      margin-bottom: 0;
+      }
+</style>
+      <section class="section dashboard">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-xxl-12 col-xl-12">
+                <div class="">
+                  <div class="sb-content mt-4">
+                    <h2 class="border-title">Documents</h2>
+                    <div class="border-icon py-2">
+                      <a class="" href="">
+                        <img src="checked.png" class="img-fluid" alt="check image">
+                        <span>Document search result title</span>
+                      </a>
+                      <p>Lorem ipsum dolor sit amet. Id inventore quod et reiciendis eius qui nostrum harum</p>
+                    </div>
+                    <div class="border-icon py-2">
+                      <a class="" href="">
+                        <img src="checked.png" class="img-fluid" alt="check image">
+                        <span>Document search result title</span>
+                      </a>
+                      <p>Lorem ipsum dolor sit amet. Id inventore quod et reiciendis eius qui nostrum harum</p>
+                    </div>
+                    <div class="border-icon py-2">
+                      <a class="" href="">
+                        <img src="checked.png" class="img-fluid" alt="check image">
+                        <span>Document search result title</span>
+                      </a>
+                      <p>Lorem ipsum dolor sit amet. Id inventore quod et reiciendis eius qui nostrum harum</p>
+                    </div>
+                  </div>
+                  <div class="sb-content mt-4">
+                    <h2 class="border-title">Videos</h2>
+                    <div class="border-icon py-2">
+                      <a class="" href="">
+                        <img src="checked.png" class="img-fluid" alt="check image">
+                        <span>Video search result title</span>
+                      </a>
+                      <p>Lorem ipsum dolor sit amet. Id inventore quod et reiciendis eius qui nostrum harum</p>
+                    </div>
+                    <div class="border-icon py-2">
+                      <a class="" href="">
+                        <img src="checked.png" class="img-fluid" alt="check image">
+                        <span>Video search result title</span>
+                      </a>
+                      <p>Lorem ipsum dolor sit amet. Id inventore quod et reiciendis eius qui nostrum harum</p>
+                    </div>
+                    <div class="border-icon py-2">
+                      <a class="" href="">
+                        <img src="checked.png" class="img-fluid" alt="check image">
+                        <span>Video search result title</span>
+                      </a>
+                      <p>Lorem ipsum dolor sit amet. Id inventore quod et reiciendis eius qui nostrum harum</p>
+                    </div>
+                  </div>
+                  <div class="sb-content mt-4">
+                    <h2 class="border-title">Schematics</h2>
+                    <div class="border-icon py-2">
+                      <a class="" href="">
+                        <img src="checked.png" class="img-fluid" alt="check image">
+                        <span>Schematics search result title</span>
+                      </a>
+                      <p>Lorem ipsum dolor sit amet. Id inventore quod et reiciendis eius qui nostrum harum</p>
+                    </div>
+                  </div>
+                  <div class="sb-content mt-4">
+                    <h2 class="border-title">Tutorials</h2>
+                    <div class="border-icon py-2">
+                      <a class="" href="">
+                        <img src="checked.png" class="img-fluid" alt="check image">
+                        <span>Tutorials search result title</span>
+                      </a>
+                      <p>Lorem ipsum dolor sit amet. Id inventore quod et reiciendis eius qui nostrum harum</p>
+                    </div>
+                  </div>
+                </div>
+                </div><!-- End Customers Card -->
+              </div>
+              </div><!-- End Left side columns -->
+            </div>
+          </section>
+        </div>
+      </main>
+      
+      <!-- Vendor JS Files -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+      <!-- Template Main JS File -->
+      <script src="assets/js/main.js"></script>
+      <script src="assets/js/search.bar.js"></script>
+      <script src="assets/css/owl.carousel_new.js"></script>
+      <!-- carousel script start -->
+      <script>
+      $('.owl-carousel2').owlCarousel({
+      loop: true,
+      margin: 10,
+      dots: false,
+      nav: true,
+      autoplay: false,
+      smartSpeed: 3000,
+      autoplayTimeout: 3000,
+      responsive: {
+      0: {
+      items: 1
+      },
+      600: {
+      items: 1
+      },
+      1000: {
+      items: 1
+      }
+      }
+      })
+      </script>
+      <script>
+      $(document).ready(function(){
+      //DropDown input - select
+      $('.t-dropdown-input').on('click', function() {
+      $(this).parent().next().slideDown('fast');
+      });
+      $('.t-select-btn').on('click', function() {
+      $('.t-dropdown-list').slideUp('fast');
+      if(!$(this).prev().attr('disabled')){
+      $(this).prev().trigger('click');
+      }
+      });
+      $('.t-dropdown-input').width($('.t-dropdown-select').width() - $('.t-select-btn').width() - 13);
+      $('.t-dropdown-list').width($('.t-dropdown-select').width());
+      $('.t-dropdown-input').val('');
+      $('li.t-dropdown-item').on('click', function() {
+      var text = $(this).html();
+      $(this).parent().prev().find('.t-dropdown-input').val(text);
+      $('.t-dropdown-list').slideUp('fast');
+      });
+      $(document).on('click', function(event) {
+      if ($(event.target).closest(".t-dropdown-input, .t-select-btn").length)
+      return;
+      $('.t-dropdown-list').slideUp('fast');
+      event.stopPropagation();
+      });
+      // END //
+      });
+      </script>
+    </body>
+  </html>

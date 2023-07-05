@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link async="true" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"  crossorigin=""/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
+    <script src="assets/css/jquery.min.js"></script>
+    <script src="assets/css/owl.carousel.min.js"></script>
+    <script src="assets/css/carausol_slider.js"></script>
+    <style>
+    
+    /*----- carousel start ------*/
+    .owl-nav .owl-prev {
+    position: absolute;
+    top: 22%;
+    left: 5.6%;
+    height: 38px;
+    text-align: center;
+    width: 38px;
+    border-radius: 40px;
+    font-size:100px !important;
+    color: #000 !important;
+    padding-top: 5px;
+    transition: 0.25s;
+    border: none !important;
+    background: transparent;
+    /*box-shadow: 0 7px 29px 0 hsla(240,5%,41%,.2);*/
+    /*box-shadow: 1px 1px 1px transparent !important;*/
+    }
+    .owl-nav .owl-next {
+    position: absolute;
+    top: 22%;
+    right: 5.6%;
+    height: 38px;
+    text-align: center;
+    width: 38px;
+    border-radius: 40px;
+    font-size:100px !important;
+    color: #000 !important;
+    padding-top: 5px;
+    transition: 0.25s;
+    border: none !important;
+    background: transparent;
+    /*box-shadow: 0 7px 29px 0 hsla(240,5%,41%,.2);*/
+    /*box-shadow: 1px 1px 1px transparent !important;*/
+    }
+    .owl-nav .owl-prev {
+    font-size: 20px;
+    }
+    .owl-nav>div {
+    margin-top: -10px;
+    position: absolute;
+    top: 150px;
+    color: #000;
+    }
+    .carousel-box button:focus {
+    outline: none;
+    }
+    @media screen and (max-width:768px) {
+    .owl-nav .owl-prev {
+    font-size: 60px !important;
+    }
+    .owl-nav .owl-next {
+    font-size: 60px !important;
+    }
+    }
+    .special-overlay-item {
+    overflow: hidden;
+    position: relative;
+    }
+    /*.special-img img {
+    width: 100%;
+    height: 230px;
+    }*/
+    .special-overlay:before {
+    background-image: linear-gradient(to top, #000000ba 0%, #00000017 4%);
+    /*background-color: rgb(0 0 0 / 40%);*/
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    border-radius: 10px;
+    }
+    .special-overlay-item .special-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 0px 10px 10px;
+    }
+    
+    .special-overlay-item .special-content h3 {
+     color: #fefefe;
+    padding: 4px 20px 8px 0;
+    margin-bottom: 0;
+    /*text-align: center;*/
+    font-size: 22px;
+    }
+.view-btn {
+    display: inline-block;
+    background: #ffc107;
+    border: none;
+    font-size: 15px;
+    padding: 12px 1.9rem 6px;
+    cursor: pointer;
+    color: #292929;
+    font-weight: 700;
+    text-transform: capitalize;
+    border-radius: 2px;
+    transition: 0.5s;
+    border-radius: 50px;
+}
+     @media screen and (max-width:768px){
+      .special-overlay-item .special-content h3{
+        font-size: 15px;
+      }
+  .special-overlay-item .special-content{
+        padding: 13px 10px 10px;
+    background: #0000004a;
+  }
+  .view-btn {
+    font-size: 10px;
+    padding: 5px 10px 3px;
+}
+}
+
+    .dashboard .filter{
+    position: absolute;
+    right: 0px;
+    top: 70px;
+    z-index: 992;
+    }
+    .dashboard .filter i{
+    font-size: 26px;
+    color: black;
+    }
+    .dashboard .filter .icon{
+    padding-right: 15px !important;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/Fluent-Logo.png" alt="">
+          </a>
+          <div class="search-bar d-block d-lg-none">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+              <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+              <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+          <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+              <li class="nav-item dropdown header-shipping">
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                  <i class="bi bi-cart"></i>
+                  <span class="badge bg-warning badge-number">2</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="login.html" class="main-logo">
+                  <img src="login.png" alt="">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- ======= Header ======= -->
+      
+      <main id="main" class="main">
+        <div class="container">
+          <div class="pagetitle">
+            <div class="d-flex align-items-center justify-content-between">
+              <h1 class="prtitle">Alter Metals</h1>
+              <div class="d-lg-none d-block">
+                <a class="nav-link nav-icon search-bar-toggle search-bar-icon" href="#">
+                  <i class="bi bi-search"></i>
+                </a>
+              </div>
+              <div class="input-box d-none d-lg-block">
+                <input type="text" placeholder="Search..." />
+                <span class="search">
+                  <i class="bi bi-search search-icon"></i>
+                </span>
+                <i class="fas fa-times close-icon"></i>
+              </div>
+            </div>
+            <p class="prsubtitle">1234 Main St. Chicago IL 12345</p>
+          </div>
+          <section class="section dashboard">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="" style="position: relative;">
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="preview-ddr dropdown-header text-start">
+                        <h3 class="preview-tt">Assests Details</h3>
+                        <h4 class="preview-stt">Call Dealer</h4>
+                        <p class="preview-sttp"><i class="bi bi-telephone-fill pe-2"></i>800.123.4567</p>
+                        <h4 class="preview-stt">Call Fluent Conveyors</h4>
+                        <p class="preview-sttp mb-2"><i class="bi bi-telephone-fill pe-2"></i>800.123.4567</p>
+                      </li>
+                      <li class="dropdown-header preview-header text-start">
+                        <div class="preview-dropdown border-bottom border-top pt-2">
+                          <a class="" href="">
+                            <div class="ps-1 py-1">
+                              <i class="bi bi-shield-lock pe-2"></i>
+                              <span>Warranty Details</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="dropdown-header text-start">
+                        <div class="preview-dropdown border-bottom">
+                          <a class="" href="">
+                            <div class="ps-1 py-1">
+                              <i class="bi bi-tools pe-2"></i>
+                              <span>Installation</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="dropdown-header text-start">
+                        <div class="preview-dropdown border-bottom">
+                          <a class="" href="">
+                            <div class="ps-1 py-1">
+                              <i class="bi bi-file-earmark-text pe-2"></i>
+                              <span>Documents &amp; Manuals</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="dropdown-header text-start">
+                        <div class="preview-dropdown border-bottom">
+                          <a class="" href="">
+                            <div class="ps-1 py-1">
+                              <i class="bi bi-play-btn pe-2"></i>
+                              <span>Videos</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="dropdown-header text-start">
+                        <div class="preview-dropdown border-bottom">
+                          <a class="" href="">
+                            <div class="ps-1 py-1">
+                              <i class="bi bi-diagram-3 pe-2"></i>
+                              <span>Schematics</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="dropdown-header text-start">
+                        <div class="preview-dropdown">
+                          <a class="" href="">
+                            <div class="ps-1">
+                              <i class="bi bi-question-circle pe-2"></i>
+                              <span>Help Desk</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xxl-12 col-xl-12">
+                    <div class="carousel-box pt-3">
+                      <div class="">
+                        <div class="owl-carousel owl-carousel2 owl-theme owl-loaded owl-drag">
+                          <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-6150px, 0px, 0px); transition: all 0.25s ease 0s; width: 14760px;">
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="integration">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 10px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                      <div class="special-content">
+                                        <div class="d-flex justify-content-between">
+                                          <div><h3>Test Name - 010002351004</h3></div>
+                                          <div class="mb-2">
+                                            <a href="" class="view-btn text-dark">VIEW QUOTE</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="support">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 10px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                      <div class="special-content">
+                                          <h3>Test Name - 010002351004</h3>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="ecommerce">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 10px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                      <div class="special-content">
+                                        <a href="">
+                                          <h3>Test Name - 010002351004</h3>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="development">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 10px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                      <div class="special-content">
+                                        <a href="">
+                                          <h3>Test Name - 010002351004</h3>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="migration">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 10px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                      <div class="special-content">
+                                        <a href="">
+                                          <h3>Test Name - 010002351004</h3>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="training">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 10px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                      <div class="special-content">
+                                        <a href="">
+                                          <h3>Test Name - 010002351004</h3>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div>
+                          <div class="owl-dots disabled"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="mt-5">Assets Components</p>
+                    <div class="card info-card preview-card">
+                      <div class="preview-body">
+                        <div class="pr-area preview-list">
+                          <div class="preview-item">
+                            <div class="preview-thumbnail">
+                              <img src="assets/img/product-2.jpg" alt="image" class="">
+                            </div>
+                            <div class="preview-item-content d-flex flex-grow">
+                              <div class="flex-grow">
+                                <div class="d-flex justify-content-between">
+                                  <h3 class="preview-subject">Radical Stacker Slewing Bearing </h3>
+                                  <p class="text-muted text-small"><i class="fas fa-info-circle"></i></p>
+                                </div>
+                                <p class="text-muted">SKU: PROFC100024</p>
+                                <div class="d-flex justify-content-between">
+                                  <div class=""> </div>
+                                  <p class="text-muted text-small"><i class="fas fa-plus-circle"></i></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card info-card preview-card">
+                      <div class="preview-body">
+                        <div class="pr-area preview-list">
+                          <div class="preview-item">
+                            <div class="preview-thumbnail">
+                              <img src="assets/img/product-5.jpg" alt="image" class="">
+                            </div>
+                            <div class="preview-item-content d-flex flex-grow">
+                              <div class="flex-grow">
+                                <div class="d-flex justify-content-between">
+                                  <h3 class="preview-subject">Replacement Conveyor Motors/Drives </h3>
+                                  <p class="text-muted text-small"><i class="fas fa-info-circle"></i></p>
+                                </div>
+                                <p class="text-muted">SKU: PROFC100024</p>
+                                <div class="d-flex justify-content-between">
+                                  <div class=""> <a href="">VIEW BOM</a> </div>
+                                  <p class="text-muted text-small"><i class="fas fa-plus-circle"></i></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card info-card preview-card">
+                      <div class="preview-body">
+                        <div class="pr-area preview-list">
+                          <div class="preview-item">
+                            <div class="preview-thumbnail">
+                              <img src="assets/img/product-4.jpg" alt="image" class="">
+                            </div>
+                            <div class="preview-item-content d-flex flex-grow">
+                              <div class="flex-grow">
+                                <div class="d-flex justify-content-between">
+                                  <h3 class="preview-subject">Replacement Chevron Cleated Conveyor Belts </h3>
+                                  <p class="text-muted text-small"><i class="fas fa-info-circle"></i></p>
+                                </div>
+                                <p class="text-muted">SKU: PROFC100024</p>
+                                <div class="d-flex justify-content-between">
+                                  <div class=""> </div>
+                                  <p class="text-muted text-small"><i class="fas fa-plus-circle"></i></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Launch demo modal
+        </button>
+                    </div>
+                    </div><!-- End Customers Card -->
+                  </div>
+                  </div><!-- End Left side columns -->
+                </div>
+              </section>
+            </div>
+            </main><!-- End #main -->
+            <style>
+            .preview-ddr{
+            }
+            .preview-header{
+            padding: 0px 15px 8px;
+            }
+            .preview-ddr .preview-tt{
+            font-size: 22px;
+            color: #393939;
+            font-weight: 600;
+            margin-bottom: 25px;
+            }
+            .preview-ddr .preview-stt{
+            font-size: 18px;
+            color: #393939;
+            font-weight: 600;
+            }
+            .preview-ddr .preview-sttp{
+            color: #1f5ea8;
+            font-weight: 600;
+            font-size: 18px;
+            }
+            .preview-ddr .preview-sttp i{
+            font-size: 13px;
+            }
+            .preview-dropdown a{
+            color: #393939;
+            font-weight: 600;
+            font-size: 18px;
+            }
+            .preview-card{
+            padding-bottom: 0 !important;
+            margin-bottom: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            }
+            .preview-body{padding: 14px !important;}
+            .preview-list .preview-item {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            -webkit-align-items: flex-start;
+            align-items: flex-start;
+            /*padding: 1rem 0rem;*/
+            font-size: .875rem;
+            }
+            .preview-list .preview-item .preview-thumbnail {
+            color: #ffffff;
+            position: relative;
+            }
+            .preview-list .preview-item .preview-thumbnail img {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+            }
+            .preview-list .preview-item .preview-item-content {
+            line-height: 1;
+            padding-left: 15px;
+            }
+            .preview-list .preview-item .preview-item-content .preview-subject{
+            font-weight: 600;
+            font-size: 17px;
+            padding-right: 14px;
+            }
+            .flex-grow {
+            flex-grow: 1;
+            }
+            .preview-list .preview-item .preview-item-content p {
+            margin-bottom: 5px;
+            line-height: 22px;
+            }
+            </style>
+
+             <style>
+              .footer-quote{
+                background: #1f5ea8;
+                padding: 20px 10px;
+              }
+              .add-quote-btn{
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+              }
+              .add-quote-btn p{
+                color: white;
+              }
+              .add-quote{
+                background: #ffc107;
+                font-size: 15px;
+                border: 2px solid #ffc107;
+                padding: 5px 1.9rem 1px;
+                cursor: pointer;
+                color: #292929;
+                font-weight: 700;
+                text-transform: capitalize;
+                border-radius: 2px;
+                transition: 0.5s;
+                border-radius: 50px;
+              }
+              .add-quote:hover{
+                border: 2px solid #ffc107;
+                background: transparent;
+                color: #ffc107;
+              }
+            </style>
+
+            <div class="footer-quote">
+              <div class="container">
+                <div class="add-quote-btn">
+                  <div class=""><p>3 Items Selected</p></div>
+                  <div class=""><a href="" class="add-quote">ADD TO QUOTE</a></div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- modal start -->
+            <!-- Button trigger modal -->
+
+<style>
+  .btn-modal {
+    background: #1f5ea8;
+    border: 1px solid #1f5ea8;
+    border-radius: 30px;
+    padding: 3px 35px 0px;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+  }
+   .btn-modal.btn-cancel{
+    background: #fff;
+    color: black;
+    border: 1px solid #fff;
+  }
+@media (min-width: 576px)
+{.modal-dialog {
+    margin-top: 6rem;
+}
+}
+
+.modal-dialog {
+    margin-top: 6rem;
+}
+.modal-header .btn-close{
+  padding: 0 !important;
+      position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 1;
+        color: #444;
+    background: none !important;
+}
+
+.preview-item {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    padding: 6px 0rem;
+    font-size: .875rem;
+}
+.preview-item .preview-thumbnail img {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+}
+
+
+ .preview-item {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            flex-direction: row;
+            -webkit-align-items: flex-start;
+            align-items: flex-start;
+            padding: 6px 0rem;
+            font-size: .875rem;
+            align-items: center;
+            }
+             .preview-item .preview-thumbnail {
+            color: #ffffff;
+            position: relative;
+            }
+             .preview-item .preview-thumbnail img {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+            }
+
+             .preview-item .preview-item-content {
+            line-height: 1;
+            padding-left: 15px;
+            }
+             .preview-item .preview-item-content .preview-subject{
+            font-weight: 600;
+            font-size: 20px;
+            padding-right: 14px;
+            }
+            .flex-grow {
+            flex-grow: 1;
+            }
+             .preview-item .preview-item-content p {
+            margin-bottom: 5px;
+            line-height: 22px;
+            }
+            @media screen and (max-width: 768px){
+               .preview-item .preview-thumbnail img {
+            width: 50px;
+            height: 50px;
+          }
+           .preview-item .preview-item-content p {
+            font-size: 13px;
+            }
+           .preview-item .preview-item-content .preview-subject{
+                font-size: 13px;
+                margin-bottom: 0;
+          }}
+.preview-item .preview-item-content .preview-subject {
+    font-weight: 600;
+    font-size: 20px;
+    padding-right: 14px;
+}
+@media screen and (max-width: 768px){
+.preview-item .preview-item-content .preview-subject {
+    font-size: 13px;
+}
+  .preview-item .preview-thumbnail img {
+    width: 50px;
+    height: 50px;
+}
+}
+.qty{
+  text-align: right
+}
+    .qty .count {
+    color: #000;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    padding: 0 2px;
+    min-width: 35px;
+    text-align: center;
+}
+.qty .plus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: black;
+    width: 12px;
+    height: 15px;
+    font: 15px/1 Arial,sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    }
+.qty .minus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: black;
+    width: 12px;
+    height: 15px;
+    font: 15px/1 Arial,sans-serif;
+    text-align: center;
+    line-height: 0.8;
+    border-radius: 50%;
+    background-clip: padding-box;
+}
+/*@media screen and (max-width: 768px){
+  .qty {
+    width: 90px;
+}
+}*/
+/*div {
+    text-align: center;
+}*/
+.minus:hover{
+    background-color: #717fe0 !important;
+}
+.plus:hover{
+    background-color: #717fe0 !important;
+}
+/*Prevent text selection*/
+span{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+input{  
+    border: 0;
+    width: 2%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input:disabled{
+    background-color:white;
+}
+@media screen and (max-width: 768px)
+{
+  .qty {
+    width: 90px;
+}
+}
+
+</style>
+<!-- Modal -->
+        
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header border-0 pb-0">
+              <h5 class="modal-title" id="exampleModalLabel"><b> </b></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times-circle me-2"></i></button>
+            </div>
+            <div class="modal-body">
+              <div class="pr-area pb-2 mb-2">
+                <p>Hinged Steel, 9 Inch Pinch, 4 Inch Roller Chain, Full Pan (Filler)</p>
+                <p>Detail Overview</p>
+              </div>
+              <div class="carousel-box">
+                      <div class="">
+                        <div class="owl-carousel owl-carousel2 owl-theme owl-loaded owl-drag">
+                          <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-6150px, 0px, 0px); transition: all 0.25s ease 0s; width: 14760px;">
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="integration">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 0px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="support">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 0px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="ecommerce">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 0px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="development">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 0px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="migration">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 0px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="owl-item" style="width: 1210px; margin-right: 20px;" id="training">
+                                <div class="item">
+                                  <div class="special-overlay-inner">
+                                    <div class="special-overlay-item">
+                                      <a href="" class="special-img">
+                                        <img src="assets/img/home-stay-bg-3.jpg" alt="Construction ERP Software" title="Construction ERP Software" class="img-fluid" style="border-radius: 0px;">
+                                        <div class="special-overlay"></div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div>
+                          <div class="owl-dots disabled"></div>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+            <!-- modal end -->
+            <!-- Vendor JS Files -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+            <!-- Template Main JS File -->
+            <script src="assets/js/main.js"></script>
+            <script src="assets/js/search.bar.js"></script>
+            <script src="assets/css/owl.carousel_new.js"></script>
+            <!-- carousel script start -->
+            <script>
+            $('.owl-carousel2').owlCarousel({
+            loop: true,
+            margin: 10,
+            dots: false,
+            nav: true,
+            autoplay: false,
+            smartSpeed: 3000,
+            autoplayTimeout: 3000,
+            responsive: {
+            0: {
+            items: 1
+            },
+            600: {
+            items: 1
+            },
+            1000: {
+            items: 1
+            }
+            }
+            })
+            </script>
+          </body>
+        </html>
